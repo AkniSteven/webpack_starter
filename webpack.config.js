@@ -6,7 +6,7 @@ module.exports = {
     entry: './frontend/js/app.js',
     output: {
         path: path.resolve(__dirname, "public"),
-        filename: 'app.bundle.js'
+        filename: 'js/app.bundle.js'
     },
     module: {
         rules: [
@@ -15,13 +15,11 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: ["css-loader", "sass-loader"],
-                    publicPath: path.resolve(__dirname, "public/")
                 })
             }
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 8080,
         open: true
@@ -29,7 +27,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin(),
         new ExtractTextPlugin({
-            filename: "style.css",
+            filename: "css/style.css",
             disable: false,
             allChunks: true
         })
