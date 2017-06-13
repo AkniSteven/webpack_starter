@@ -8,4 +8,4 @@ How to use it: <br />
 2.npm run sync == sync from package.json (put scripts from src to dist) <br />
 3.npm run sync == dev from package.json (put scripts from src to dist, run watch) <br />
 4.npm run prod == prod from package.json (do the same do the same job as dev, but compress scripts). <br />
-4.npm run serve == serve from package.json (run dev server on localhost:8080 )<br />
+4.npm run serve == serve from package.json (run dev server on localhost:3310 )<br />

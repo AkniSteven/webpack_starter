@@ -21,7 +21,7 @@ module.exports = {
     },
     devServer: {
         compress: true,
-        port: 8080,
+        port: 3310,
         open: true
     },
     plugins: [
