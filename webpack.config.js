@@ -1,6 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+let path = require('path');
 
 module.exports = {
     entry: './frontend/js/app.js',
@@ -25,11 +25,15 @@ module.exports = {
         open: true
     },
     plugins: [
-        new HtmlWebpackPlugin(),
         new ExtractTextPlugin({
             filename: "css/style.css",
             disable: false,
             allChunks: true
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    }
 };
