@@ -3,9 +3,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './frontend/js/app.js',
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "public"),
         filename: 'app.bundle.js'
     },
     module: {
@@ -15,7 +15,7 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: ["css-loader", "sass-loader"],
-                    publicPath: "/var/www/webpack2/dist"
+                    publicPath: path.resolve(__dirname, "public/")
                 })
             }
         ]
@@ -23,7 +23,8 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 8080
+        port: 8080,
+        open: true
     },
     plugins: [
         new HtmlWebpackPlugin(),
