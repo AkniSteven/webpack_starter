@@ -20,12 +20,17 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 9000
+    },
     plugins: [
         new HtmlWebpackPlugin(),
         new ExtractTextPlugin({
-                filename: "style.css",
-                disable: false,
-                allChunks: true
-            })
+            filename: "style.css",
+            disable: false,
+            allChunks: true
+        })
     ]
 };
