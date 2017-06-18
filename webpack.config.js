@@ -25,6 +25,12 @@ module.exports = {
           "eslint-loader",
         ],
       },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [
+          "file-loader?name=[name].[ext]&publicPath=../&outputPath=images/"
+        ],
+      },
     ]
   },
   devServer: {
