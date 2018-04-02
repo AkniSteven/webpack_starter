@@ -1,10 +1,6 @@
-import Vue from 'vue';
+import './../sass/app.scss';
 
-const scss = require('./../sass/app.scss');
-
-const app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Simple vue test',
-  },
-});
+const arr = [1, 2, 3];
+const testEs6 = () => console.log(...arr);
+window.testEs6 = testEs6;
+console.log('it works');
